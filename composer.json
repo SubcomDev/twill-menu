@@ -1,0 +1,23 @@
+{
+  "name": "twill-menu/twill-menu",
+  "description": "A twill package",
+  "homepage": "https://github.com/twill-menu/twill-menu",
+  "license": "MIT",
+  "require": {
+    "area17/twill": "^2.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "TwillMenu\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "TwillMenu\\TwillMenuServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
