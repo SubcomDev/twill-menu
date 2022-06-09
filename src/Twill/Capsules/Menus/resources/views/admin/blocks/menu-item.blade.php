@@ -33,7 +33,6 @@
 
         @formField('input', [
         'name' => 'menu_external_link',
-        'type' => 'url',
         'label' => 'URL',
         'placeholder' => 'https://www.example.com',
         'translated' => true,
