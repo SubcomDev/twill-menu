@@ -53,5 +53,7 @@ return [
 
 
 - if you want to make changes use command bellow but you have to make changes in config to use twill default 
-  php artisan publish:vendor  
-  php artisan vendor:publish --provider="packages/twill-menu/TwillMenuServiceProvider" --tag="views"
+  
+  - php artisan publish:vendor  --tag="twill-menu-views"
+  - php artisan publish:vendor  --tag="twill-menu-controller"
+  - php artisan publish:vendor  --tag="twill-menu-config"

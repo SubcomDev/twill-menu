@@ -25,7 +25,7 @@ class TwillMenuServiceProvider extends TwillPackageServiceProvider
         ] ,'twill-menu-controller');
 
         $this->publishes([
-            __DIR__ . '/Twill/Capsules/Menus/Http/config/laravellocalization.php' => base_path('config/laravellocalization.php'),
+            __DIR__ . '/Twill/Capsules/Menus/config/laravellocalization.php' => base_path('config/laravellocalization.php'),
         ] ,'twill-menu-config');
 
     }
