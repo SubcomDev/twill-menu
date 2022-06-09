@@ -4,7 +4,7 @@
 
 ## Installation
 
-Laravel 9, Twill are required.
+Laravel 9, Twill and twill module Page are required.
 
 - composer install
 - php artisan migrate
