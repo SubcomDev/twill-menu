@@ -13,7 +13,7 @@ class TwillMenuServiceProvider extends TwillPackageServiceProvider
             __DIR__ . '/Twill/Capsules/Menus/resources/views/admin/form.blade.php' => base_path('resources/views/admin/menus/form.blade.php'),
             __DIR__ . '/Twill/Capsules/Menus/resources/views/admin/blocks' => base_path('resources/views/admin/blocks'),
             __DIR__ . '/Twill/Capsules/Menus/resources/views/site/' => base_path('resources/views/views/site'),
-        ],'views');
+        ],'twill-menu-views');
 
 
         $this->publishes([
@@ -22,7 +22,11 @@ class TwillMenuServiceProvider extends TwillPackageServiceProvider
 
             __DIR__ . '/Twill/Capsules/Menus/Repositories/MenuRepository.php' => base_path('app/Repositories/MenuRepository.php'),
 
-        ] ,'controller');
+        ] ,'twill-menu-controller');
+
+        $this->publishes([
+            __DIR__ . '/Twill/Capsules/Menus/Http/config/laravellocalization.php' => base_path('config/laravellocalization.php'),
+        ] ,'twill-menu-config');
 
     }
 
