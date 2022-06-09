@@ -22,17 +22,17 @@ class CreateMenusTables extends Migration
         });
 
         Schema::create('menu_translations', function (Blueprint $table) {
-            createDefaultTranslationsTableFields($table, 'menus');
+            createDefaultTranslationsTableFields($table, 'menu');
             $table->string('title', 200)->nullable();
             $table->text('description')->nullable();
         });
 
         Schema::create('menu_slugs', function (Blueprint $table) {
-            createDefaultSlugsTableFields($table, 'menus');
+            createDefaultSlugsTableFields($table, 'menu');
         });
 
         Schema::create('menu_revisions', function (Blueprint $table) {
-            createDefaultRevisionsTableFields($table, 'menus');
+            createDefaultRevisionsTableFields($table, 'menu');
         });
     }
 
