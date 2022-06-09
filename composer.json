@@ -1,8 +1,14 @@
 {
   "name": "twill-menu/twill-menu",
   "description": "A twill package",
-  "homepage": "https://github.com/twill-menu/twill-menu",
-  "license": "MIT",
+    "type": "library",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "hideloab",
+            "email": "info@hideolab.al"
+        }
+    ],
   "require": {
     "area17/twill": "^2.6"
   },
