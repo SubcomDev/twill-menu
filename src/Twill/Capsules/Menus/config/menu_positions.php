@@ -5,11 +5,13 @@ return [
 
     [
         'value' => 1,
-        'label' => 'Header'
+        'label' => 'Header',
+        'name' => 'header'
     ],
     [
         'value' => 3,
-        'label' => 'Footer'
+        'label' => 'Footer',
+        'name' => 'footer'
     ]
 
 ];

@@ -30,7 +30,6 @@ class SiteMenuController extends Controller
      */
     public function getMenu()
     {
-        //dd(config('menu_positions'));
         $json = new \stdClass();
 
         $menu = Menu::with(["blocks" => function ($q) {
@@ -211,20 +210,9 @@ class SiteMenuController extends Controller
      */
     public function getMenuPostition($menu_position): string
     {
-        $menu = null;
+        $menu_position_config = config('menu_positions');
 
-        switch ($menu_position) {
-            case 1:
-                $menu = 'header';
-                break;
-            case 2:
-                $menu = 'footer';
-                break;
-            default:
-                $menu = 'header';
-        }
-
-        return $menu;
+        return $menu_position_config[$menu_position-1]['name'];
     }
 
     /**
@@ -258,14 +246,18 @@ class SiteMenuController extends Controller
      */
     public function saveFile()
     {
-        $menu = Menu::with(["blocks" => function ($q) {
+        $menus = Menu::with(["blocks" => function ($q) {
             $q->where('blocks.parent_id', '=', null);
-        }])->first();
+        }])->get();
 
-        $position = $this->getMenuPostition($menu->position);
 
-        if ($menu->default) {
-            Storage::disk('public')->put('menu_' . $position . '.json', $this->getMenu()->content());
+        foreach ($menus as $menu) {
+
+            $position = $this->getMenuPostition($menu->position);
+
+            if ($menu->default) {
+                Storage::disk('public')->put('menu_' . $position . '.json', $this->getMenu()->content());
+            }
         }
     }
 
