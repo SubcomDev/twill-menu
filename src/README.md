@@ -11,15 +11,6 @@ Laravel 9, Twill and twill module Page are required.
 - php artisan twill:install
 - php artisan optimize
 - php artisan migrate
-- add bellow code to config/twill-navigation.php
-
-return [
-
-    'menus' => [
-    'title' => 'Menu',
-    'module' => true,
-    ],
-];
 
 - add bellow code to config/twill.php inside block_editor
  
@@ -54,6 +45,6 @@ return [
 
 - if you want to make changes use command bellow but you have to make changes in config to use twill default 
   
-  - php artisan publish:vendor  --tag="twill-menu-views"
-  - php artisan publish:vendor  --tag="twill-menu-controller"
-  - php artisan publish:vendor  --tag="twill-menu-config"
+  - php artisan vendor:publish  --tag="twill-menu-views"
+  - php artisan vendor:publish  --tag="twill-menu-controller"
+  - php artisan vendor:publish  --tag="twill-menu-config"

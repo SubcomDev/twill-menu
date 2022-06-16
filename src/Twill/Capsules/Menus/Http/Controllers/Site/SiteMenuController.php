@@ -30,6 +30,7 @@ class SiteMenuController extends Controller
      */
     public function getMenu()
     {
+        //dd(config('menu_positions'));
         $json = new \stdClass();
 
         $menu = Menu::with(["blocks" => function ($q) {

@@ -8,22 +8,13 @@
 ])
 
 @section('contentFields')
+@php  $positions=config('menu_positions'); @endphp
 
     @formField('select', [
     'name' => 'location',
     'label' => 'Posizione',
     'placeholder' => 'Seleziona posizione del menu',
-    'options' => [
-    [
-    'value' => 1,
-    'label' => 'Header'
-    ],
-    [
-    'value' => 3,
-    'label' => 'Footer'
-    ]
-    ]
-    ])
+    'options' =>  $positions])
 
     @formField('checkbox', [
     'name' => 'default',
