@@ -1,6 +1,6 @@
 {
-  "name": "twill-packages/twill-menu",
-  "description": "A twill package",
+    "name": "twill-packages/twill-menu",
+    "description": "A twill package",
     "type": "library",
     "license": "GPL-3.0-only",
     "authors": [
@@ -9,21 +9,22 @@
             "email": "info@hideolab.al"
         }
     ],
-  "require": {
-    "area17/twill": "^2.6"
-  },
-  "autoload": {
-    "psr-4": {
-      "TwillMenu\\": "src"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "TwillMenu\\TwillMenuServiceProvider"
-      ]
-    }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "require": {
+        "area17/twill": "^2.6",
+        "mcamara/laravel-localization": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "TwillMenu\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TwillMenu\\TwillMenuServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
