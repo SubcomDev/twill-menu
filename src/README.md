@@ -42,6 +42,8 @@ Laravel 9, Twill and twill module Page are required.
 
         ],
 
+- follow this link to configure laravel-localization
+   https://github.com/mcamara/laravel-localization
 
 - if you want to make changes use command bellow but you have to make changes in config to use twill default 
   
