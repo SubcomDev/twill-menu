@@ -11,7 +11,6 @@ Laravel 9, Twill and twill module Page are required.
 - php artisan twill:install
 - php artisan optimize
 - php artisan migrate
-
 - add bellow code to config/twill.php inside block_editor
  
     'directories' => [

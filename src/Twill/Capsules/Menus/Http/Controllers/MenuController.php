@@ -6,7 +6,7 @@ use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 
 class MenuController extends BaseModuleController
 {
-    protected $moduleName = 'menus';
+    protected $moduleName = 'menu';
 
     protected $indexOptions = [
     ];
