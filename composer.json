@@ -1,8 +1,8 @@
 {
     "name": "subcom/twill-menu",
     "description": "A twill package",
-    "type": "library",
-    "license": "GPL-3.0-only",
+    "homepage": "https://github.com/SubcomDev/twill-menu",
+    "license": "MIT",
     "require": {
         "area17/twill": "^2.6",
         "mcamara/laravel-localization": "^1.7"
