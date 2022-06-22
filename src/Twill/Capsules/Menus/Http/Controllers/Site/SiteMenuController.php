@@ -113,7 +113,7 @@ class SiteMenuController extends Controller
 
             $slug = $this->getInternalType($internal_item) == 'page' ? $this->getPageSlug($internal_item[0]->id,$lang,$default_language) : '';
 
-            $url = config('app.url') . 'SiteMenuController.php/' . $lang  . $internal_type  . $slug;
+            $url = config('app.url') . '/' . $lang  . $internal_type  . $slug;
 
         }
         if ($type === 'external') {
