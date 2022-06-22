@@ -56,7 +56,7 @@
 
 @endformConnectedFields
 
-
+@php  $moduls=config('twill_menu.menu_modules'); @endphp
 <!--if selected is page or news-->
 @formConnectedFields([
 'fieldName' => 'item_type',
@@ -67,12 +67,7 @@
 <x-formColumns>
     <x-slot name="left">
         @formField('browser', [
-        'modules' => [
-        [
-        'label' => 'Pagine',
-        'name' => 'pages',
-        ],
-        ],
+        'modules' => $moduls,
         'name' => 'menu_internal_link',
         'label' => 'Link interno',
         'max' => 1,

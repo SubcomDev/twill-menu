@@ -1,4 +1,4 @@
-@extends('frontend.layout.Site')
+@extends('layout.site')
 
 @section('content')
     <p>{!! $item->renderBlocks(false) !!} </p>

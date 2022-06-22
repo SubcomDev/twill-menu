@@ -3,15 +3,24 @@
 
 return [
 
-    [
-        'value' => 1,
-        'label' => 'Header',
-        'name' => 'header'
+    'menu_positions' => [
+        [
+            'value' => 1,
+            'label' => 'Header',
+            'name' => 'header'
+        ],
+        [
+            'value' => 3,
+            'label' => 'Footer',
+            'name' => 'footer'
+        ]
     ],
-    [
-        'value' => 3,
-        'label' => 'Footer',
-        'name' => 'footer'
+
+    'menu_modules' => [
+        [
+            'label' => 'Pagine',
+            'name' => 'pages',
+        ],
     ]
 
 ];
