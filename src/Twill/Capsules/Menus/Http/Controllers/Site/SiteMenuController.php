@@ -28,13 +28,13 @@ class SiteMenuController extends Controller
     /**
      *
      */
-    public function getMenu()
+    public function getMenu($menu_position)
     {
         $json = new \stdClass();
 
         $menu = Menu::with(["blocks" => function ($q) {
             $q->where('blocks.parent_id', '=', null);
-        }])->first();
+        }])->where('position',$menu_position)->first();
 
         $languages = config('laravellocalization.supportedLocales');
 
@@ -256,7 +256,7 @@ class SiteMenuController extends Controller
             $position = $this->getMenuPostition($menu->position);
 
             if ($menu->default) {
-                Storage::disk('public')->put('menu_' . $position . '.json', $this->getMenu()->content());
+                Storage::disk('public')->put('menu_' . $position . '.json', $this->getMenu($menu->position)->content());
             }
         }
     }
