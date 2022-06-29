@@ -22,7 +22,7 @@ Laravel 9, Twill and twill module Page are required.
       'title' => 'Menu',
       'icon' => 'quote',
       'component' => 'a17-block-menu',
-      'path' => base_path('vendor/twill-packages/twill-menu/src/Twill/Capsules/Menus/resources/views/admin/blocks'),
+      'path' => base_path('vendor/subcom/twill-menu/src/Twill/Capsules/Menus/resources/views/admin/blocks'),
       'source' => A17\Twill\Services\Blocks\Block::SOURCE_TWILL,
       ],
 
@@ -35,7 +35,7 @@ Laravel 9, Twill and twill module Page are required.
                 'title' => 'Aggiungi link',
                 'trigger' => 'Aggiungi sottovoce',
                 'component' => 'a17-block-menu-item',
-                'path' => base_path('vendor/twill-packages/twill-menu/src/Twill/Capsules/Menus/resources/views/admin/blocks'),
+                'path' => base_path('vendor/subcom/twill-menu/src/Twill/Capsules/Menus/resources/views/admin/blocks'),
                 'source' => A17\Twill\Services\Blocks\Block::SOURCE_TWILL,
             ],
 
