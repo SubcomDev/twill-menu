@@ -4,7 +4,7 @@
     "homepage": "https://github.com/SubcomDev/twill-menu",
     "license": "MIT",
     "require": {
-        "area17/twill": "^2.6",
+        "area17/twill": "^2.8.8",
         "mcamara/laravel-localization": "^1.7"
     },
     "autoload": {
