@@ -1,9 +1,9 @@
 # Twill menu
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/:vendor_slug/:package_slug/run-tests?label=tests)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/:vendor_slug/:package_slug/Check%20&%20fix%20styling?label=code%20style)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/subcom/twill-menu.svg?style=flat-square)](https://packagist.org/packages/subcom/twill-menu)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/subcom/twill-menu/run-tests?label=tests)](https://github.com/:vendor_slug/subcom/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/subcom/twill-menu/Check%20&%20fix%20styling?label=code%20style)](https://github.com/:vendor_slug/subcom/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/subcom/twill-menu.svg?style=flat-square)](https://packagist.org/packages/subcom/twill-menu)
 
 This a package build with laravel and twill to add menu modul.
 
@@ -24,34 +24,38 @@ composer require subcom/twill-menu
 
 1. Add this to config/twill.php inside block_editor:
 
-```bash
-directories' => [
+```php
+'directories' => [
 
-'source' => [
-'blocks' => [
-'menu' => [
+            'source' => [
 
-'title' => 'Menu',
-'icon' => 'quote',
-'component' => 'a17-block-menu',
-'path' => base_path('vendor/subcom/twill-menu/src/Twill/Capsules/Menus/resources/views/admin/blocks'),
-'source' => A17\Twill\Services\Blocks\Block::SOURCE_TWILL,
-],
+                'blocks' => [
 
-          ],
+                    'menu' => [
 
-      ]
-  ],
-  'repeaters' => [
-      'menu-item' => [
-          'title' => 'Aggiungi link',
-          'trigger' => 'Aggiungi sottovoce',
-          'component' => 'a17-block-menu-item',
-          'path' => base_path('vendor/subcom/twill-menu/src/Twill/Capsules/Menus/resources/views/admin/blocks'),
-          'source' => A17\Twill\Services\Blocks\Block::SOURCE_TWILL,
-      ],
+                        'title' => 'Menu',
+                        'icon' => 'quote',
+                        'component' => 'a17-block-menu',
+                        'path' => base_path('vendor/subcom/twill-menu/src/Twill/Capsules/Menus/resources/views/admin/blocks'),
+                        'source' => A17\Twill\Services\Blocks\Block::SOURCE_TWILL,
+                    ],
+                ],
 
-  ],
+            ],
+        ],
+
+        'repeaters' => [
+
+            'menu-item' => [
+
+                'title' => 'Aggiungi link',
+                'trigger' => 'Aggiungi sottovoce',
+                'component' => 'a17-block-menu-item',
+                'path' => base_path('vendor/subcom/twill-menu/src/Twill/Capsules/Menus/resources/views/admin/blocks'),
+                'source' => A17\Twill\Services\Blocks\Block::SOURCE_TWILL,
+            ],
+
+        ],
 ```
 2. Run command:
 ```bash
@@ -87,7 +91,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [subcom](https://github.com/SubcomDev)
 - [All Contributors](../../contributors)
 
 ## License
