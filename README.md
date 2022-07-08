@@ -62,13 +62,16 @@ php artisan optimize
 ```bash
 php artisan route:trans:clear
 ```
-4. Publish files:
+4. Run command:
+```bash
+php artisan vendor:publish --tag="twill-menu-config"
+```
+5. Publish files:
 If you want to make changes use command bellow but you have to make changes in config to use twill default
 
 ```php
 php artisan vendor:publish --tag="twill-menu-views"
 php artisan vendor:publish --tag="twill-menu-controller"
-php artisan vendor:publish --tag="twill-menu-config"
 ```
 ## Changelog
 

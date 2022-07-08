@@ -17,10 +17,10 @@ return [
     ],
 
     'menu_modules' => [
-        [
+        /*[
             'label' => 'Pagine',
             'name' => 'pages',
-        ],
+        ],*/
     ]
 
 ];

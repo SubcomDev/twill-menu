@@ -29,7 +29,7 @@ class TwillMenuServiceProvider extends TwillPackageServiceProvider
         ] ,'twill-menu-controller');
 
         $this->publishes([
-            __DIR__ . '/Twill/Capsules/Menus/config/twill_menu.php' => base_path('config/twill_menu.php'),
+            __DIR__ . '/Twill/Capsules/Menus/config/twill-menu.php' => base_path('config/twill-menu.php'),
         ] ,'twill-menu-config');
 
     }

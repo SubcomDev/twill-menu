@@ -30,7 +30,6 @@
 
 <x-formColumns>
     <x-slot name="left">
-
         @formField('input', [
         'name' => 'menu_external_link',
         'label' => 'URL',
@@ -56,8 +55,8 @@
 
 @endformConnectedFields
 
-@php  $moduls=config('twill_menu.menu_modules'); @endphp
-<!--if selected is page or news-->
+@php  $moduls=config('twill-menu.menu_modules'); @endphp
+    <!--if selected is page or news-->
 @formConnectedFields([
 'fieldName' => 'item_type',
 'fieldValues' => 'internal',
@@ -66,13 +65,15 @@
 
 <x-formColumns>
     <x-slot name="left">
-        @formField('browser', [
-        'modules' => $moduls,
-        'name' => 'menu_internal_link',
-        'label' => 'Link interno',
-        'max' => 1,
-        'min' => 1
-        ])
+        @if($moduls)
+            @formField('browser', [
+            'modules' => $moduls,
+            'name' => 'menu_internal_link',
+            'label' => 'Link interno',
+            'max' => 1,
+            'min' => 1
+            ])
+        @endif
     </x-slot>
     <x-slot name="right">
         @formField('input', [

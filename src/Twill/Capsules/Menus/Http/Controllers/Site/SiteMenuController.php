@@ -210,7 +210,7 @@ class SiteMenuController extends Controller
      */
     public function getMenuPostition($menu_position): string
     {
-        $menu_position_config = config('twill_menu.menu_positions');
+        $menu_position_config = config('twill-menu.menu_positions');
 
         return $menu_position_config[$menu_position-1]['name'];
     }

@@ -8,7 +8,7 @@
 ])
 
 @section('contentFields')
-@php  $positions=config('twill_menu.menu_positions'); @endphp
+@php  $positions=config('twill-menu.menu_positions'); @endphp
 
     @formField('select', [
     'name' => 'location',
