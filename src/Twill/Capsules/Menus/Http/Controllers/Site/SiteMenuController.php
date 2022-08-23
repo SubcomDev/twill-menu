@@ -107,13 +107,16 @@ class SiteMenuController extends Controller
 
         if ($type === 'internal') {
 
+
             $internal_item = $item->getRelated('menu_internal_link');
 
-            $internal_type = $this->getInternalType($internal_item) == 'page' ? '/' : '';
+            //$internal_type = $this->getInternalType($internal_item) == 'page' ? '/' : '';
 
-            $slug = $this->getInternalType($internal_item) == 'page' ? $this->getPageSlug($internal_item[0]->id,$lang,$default_language) : '';
+            //$slug = $this->getInternalType($internal_item) == 'page' ? $this->getPageSlug($internal_item[0]->id,$lang,$default_language) : '';
 
-            $url = config('app.url') . '/' . $lang  . $internal_type  . $slug;
+            $slug = $this->getSlug($internal_item, $lang, $default_language);
+
+            $url = config('app.url') . '/' . $lang . '/'. $slug;
 
         }
         if ($type === 'external') {
@@ -155,6 +158,7 @@ class SiteMenuController extends Controller
     public function getInternalType($item)
     {
         $type = null;
+       
         $page = $item[0]->translations[0]->page_id ?? null;
         $homepage = $item[0]->translations[0]->homepage_id ?? null;
 
@@ -164,6 +168,9 @@ class SiteMenuController extends Controller
         if ($homepage != null) {
             $type = 'homepage';
         }
+
+  
+
         return $type;
     }
 
@@ -193,16 +200,49 @@ class SiteMenuController extends Controller
 
     public function getPageSlug($id, $lang, $default_lang)
     {
-
         $slug = PageSlug::where('page_id', $id)->where('locale', $lang)->where('active',1)->first();
 
         if ($slug == null) {
 
-            return PageSlug::where('page_id', $id)->where('locale', $default_lang)->where('active',1)->first()->slug;;
+            return PageSlug::where('page_id', $id)->where('locale', $default_lang)->where('active',1)->first()->slug;
 
         }
         return $slug->slug;
     }
+
+
+    public function getSlug($item, $lang, $default_lang)
+    {
+
+        $item = $item[0];
+
+        $slug_temp = '';
+
+        if(!is_null($item->slugAttributes))
+        {   
+            foreach($item->slugs as $slug){
+
+                if($slug->active && $slug->locale == $lang)
+                {
+                    $slug_temp = $slug->slug;
+                }
+            }
+            if(!is_null($item->permalinks)){
+
+                $slug_temp = $item->permalinks[$lang].'/'.$slug_temp;
+            }
+
+            return $slug_temp;
+        }
+
+        if(!is_null($item->slugs))
+        {
+            return $item->slugs[$lang];
+        }
+       
+    }
+
+
 
     /**
      * @return string
