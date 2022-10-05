@@ -35,7 +35,6 @@ class SiteMenuController extends Controller
         $menu = Menu::with(["blocks" => function ($q) {
             $q->where('blocks.parent_id', '=', null);
         }])->where('position',$menu_position)->first();
-
         $languages = config('laravellocalization.supportedLocales');
 
         if ($menu) {
@@ -45,7 +44,6 @@ class SiteMenuController extends Controller
                 $menu_data = [];
 
                 foreach ($menu->blocks as $item) {
-
                     $type = $item->content['item_type'];
 
                     $temp = [
@@ -53,7 +51,8 @@ class SiteMenuController extends Controller
                         'label' => array_key_exists($lang, $item->content['menu_' . $type . '_label']) ? $item->content['menu_' . $type . '_label'][$lang] : $item->content['menu_' . $type . '_label'][$this->default_language],
                         'children' => $this->getChildrens($item, $lang),
                         'target' => $this->getTarget($item, $lang),
-                        'outlined' => $this->outlined($item, $lang)
+                        'outlined' => $this->outlined($item, $lang),
+                        'extra_class' => $item->content['extra_class'] ? $item->content['extra_class'] : null,
                     ];
 
                     array_push($menu_data, $temp);
@@ -90,6 +89,7 @@ class SiteMenuController extends Controller
                 'target' => $this->getTarget($child, $lang),
                 'outlined' => $this->outlined($child, $lang),
                 'children' => $this->getChildrens($child, $lang),
+                'extra_class' => $child->content['extra_class'] ? $child->content['extra_class'] : null,
             ];
 
             array_push($children_data, $temp);

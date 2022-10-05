@@ -88,18 +88,28 @@
 
 @endformConnectedFields
 
-@formField('checkbox', [
-'name' => 'target',
-'label' => 'Apri link in una nuova finestra?',
-'default' => false
-])
 
-@formField('checkbox', [
-'name' => 'outlined',
-'label' => 'Outlined',
-'default' => false
-])
+<x-formColumns>
+    <x-slot name="left">
+       @formField('checkbox', [
+        'name' => 'target',
+        'label' => 'Apri link in una nuova finestra?',
+        'default' => false
+    ])
 
+        @formField('checkbox', [
+        'name' => 'outlined',
+        'label' => 'Outlined',
+        'default' => false
+    ])
+    </x-slot>
+    <x-slot name="right">
+        @formField('input', [
+        'name' => 'extra_class',
+        'label' => 'Extra Class',
+        ])
+    </x-slot>
+</x-formColumns>
 
 @formField('repeater', [
 'type' => 'menu-item'
