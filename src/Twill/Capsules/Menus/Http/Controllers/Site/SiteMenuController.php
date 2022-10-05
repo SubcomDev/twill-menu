@@ -52,7 +52,7 @@ class SiteMenuController extends Controller
                         'children' => $this->getChildrens($item, $lang),
                         'target' => $this->getTarget($item, $lang),
                         'outlined' => $this->outlined($item, $lang),
-                        'extra_class' => $item->content['extra_class'] ? $item->content['extra_class'] : null,
+                        'extra_class' => isset($item->content['extra_class']) ? $item->content['extra_class'] : null,
                     ];
 
                     array_push($menu_data, $temp);
@@ -89,7 +89,7 @@ class SiteMenuController extends Controller
                 'target' => $this->getTarget($child, $lang),
                 'outlined' => $this->outlined($child, $lang),
                 'children' => $this->getChildrens($child, $lang),
-                'extra_class' => $child->content['extra_class'] ? $child->content['extra_class'] : null,
+                'extra_class' => isset($child->content['extra_class']) ? $child->content['extra_class'] : null,
             ];
 
             array_push($children_data, $temp);
