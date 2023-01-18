@@ -59,7 +59,7 @@ composer require subcom/twill-menu
 ```
 2. Run command:
 ```bash
-php artisan optimize
+php artisan optimize:clear
 ```
 
 3. Run command:
