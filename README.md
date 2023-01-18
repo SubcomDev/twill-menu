@@ -69,6 +69,7 @@ php artisan route:trans:clear
 4. Run command:
 ```bash
 php artisan vendor:publish --tag="twill-menu-config"
+php artisan migrate
 ```
 5. Publish files:
 If you want to make changes use command bellow but you have to make changes in config to use twill default
